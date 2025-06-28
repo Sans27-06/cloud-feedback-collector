@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Feedback Collector</title>
+</head>
+<body>
+  <h2>Submit Feedback</h2>
+  <form id="feedbackForm">
+    <textarea name="message" placeholder="Write your feedback..." required></textarea><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    document.getElementById('feedbackForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const message = this.message.value;
+      await fetch('https://asia-south1-your-project-id.cloudfunctions.net/submitFeedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message })
+      });
+      alert("Feedback submitted!");
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "name": "feedback-function",
+  "dependencies": {
+    "@google-cloud/functions-framework": "^3.0.0",
+    "@google-cloud/firestore": "^7.6.0"
+  }
+}
